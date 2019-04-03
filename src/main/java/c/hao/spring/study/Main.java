@@ -1,6 +1,7 @@
 package c.hao.spring.study;
 
 import c.hao.spring.study.bean.Car;
+import c.hao.spring.study.service.OrderService;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.HierarchicalBeanFactory;
@@ -20,14 +21,10 @@ import org.springframework.core.io.Resource;
  */
 public class Main {
     public static void main(String[] args) {
-        Resource resource = new ClassPathResource("beans.xml");
-        BeanFactory factory = new XmlBeanFactory(resource);
-        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:beans.xml");
-        System.out.println("beans inflate success!");
-        Car car = (Car) factory.getBean("car1");
-        System.out.println(car.getColor());
-        Car car2 = (Car) context.getBean("car1");
-        System.out.println(car2.getColor());
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:beans.xml");
+        OrderService orderService = (OrderService) applicationContext.getBean("orderServiceImpl");
+        orderService.createOrder("haoxpdp","test");
+        orderService.queryOrder("haoxpdp");
 
     }
 }
