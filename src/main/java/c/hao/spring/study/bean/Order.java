@@ -1,5 +1,9 @@
 package c.hao.spring.study.bean;
 
+import org.springframework.beans.factory.InitializingBean;
+
+import java.sql.SQLOutput;
+
 /**
  * @author by haoxpdp
  * @date 19-4-3 下午5:31
@@ -51,4 +55,6 @@ public class Order {
                 ", product='" + product + '\'' +
                 '}';
     }
+
+
 }

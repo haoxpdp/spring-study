@@ -7,7 +7,7 @@ import c.hao.spring.study.service.UserService;
  * @author by haoxpdp
  * @date 19-4-3 下午5:39
  */
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl {
 
     public User createUser(String firstName, String lastName, String age) {
         User user = new User();
