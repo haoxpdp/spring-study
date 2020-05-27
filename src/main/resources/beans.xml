@@ -10,20 +10,20 @@
     <!--<bean id="userServiceImpl" class="c.hao.spring.study.service.impl.UserServiceImpl"></bean>-->
     <bean id="orderServiceImpl" class="c.hao.spring.study.service.impl.OrderServiceImpl"></bean>
 
-    <!--    测试 Processor-->
-<!--    <bean id="mBeanFactoryPostProcessor" class="c.hao.spring.study.processor.MBeanFactoryPostProcessor"></bean>-->
+<!--        测试 Processor-->
+    <bean id="mBeanFactoryPostProcessor" class="c.hao.spring.study.processor.MBeanFactoryPostProcessor"></bean>
 <!--    <bean id="mBeanPostProcessor" class="c.hao.spring.study.processor.MBeanPostProcessor"></bean>-->
-        <!--    测试aop   -->
+<!--            测试aop-->
 <!--    <bean id="logArgsAdvice" class="c.hao.spring.study.Advice.LogArgsAdvice"></bean>-->
-    <bean id="logResultAdvice" class="c.hao.spring.study.Advice.LogResultAdvice"></bean>
+<!--    <bean id="logResultAdvice" class="c.hao.spring.study.Advice.LogResultAdvice"></bean>-->
 
 <!--    <bean id="logArgsAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">-->
 <!--        <property name="advice" ref="logArgsAdvice"/>-->
 <!--        <property name="pattern" value="c.hao.spring.study.service.*.create.*"/>-->
 <!--    </bean>-->
-    <bean id="logResultAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
-        <property name="advice" ref="logResultAdvice"/>
-        <property name="pattern" value="c.hao.spring.study.service.*.query.*"/>
-    </bean>
-    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" />
+<!--    <bean id="logResultAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">-->
+<!--        <property name="advice" ref="logResultAdvice"/>-->
+<!--        <property name="pattern" value="c.hao.spring.study.service.*.query.*"/>-->
+<!--    </bean>-->
+<!--    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" />-->
 </beans>
