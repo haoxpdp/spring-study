@@ -1,9 +1,13 @@
 package c.hao.spring.study;
 
+import c.hao.spring.study.api.Api;
+import c.hao.spring.study.api.TestApi;
 import c.hao.spring.study.bean.TestFactory;
 import c.hao.spring.study.service.OrderService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.util.List;
 
 
 /**
@@ -17,8 +21,9 @@ public class Main {
         orderService.createOrder("haoxpdp", "test");
         orderService.queryOrder("haoxpdp");
 
-        TestFactory testFactory = applicationContext.getBean(TestFactory.class);
-        testFactory.test();
+        TestApi testFactory = applicationContext.getBean(TestApi.class);
+        List<String> list = testFactory.list();
+        System.out.println(list.size());
 
     }
 }

@@ -1,6 +1,8 @@
 package c.hao.spring.study.api;
 
-public class ApiFactory {
+import org.springframework.beans.factory.FactoryBean;
+
+public class ApiFactory<T> implements FactoryBean<T> {
 
     private Class<?> clz;
 
@@ -8,4 +10,13 @@ public class ApiFactory {
         this.clz = clazz;
     }
 
+    @Override
+    public T getObject() throws Exception {
+        return (T) new Api();
+    }
+
+    @Override
+    public Class<?> getObjectType() {
+        return clz;
+    }
 }

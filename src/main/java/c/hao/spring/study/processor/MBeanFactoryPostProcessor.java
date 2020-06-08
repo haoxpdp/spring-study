@@ -23,11 +23,13 @@ public class MBeanFactoryPostProcessor implements BeanFactoryPostProcessor, Bean
 
     ResourceLoader loader;
 
+    @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
         System.out.println("BeanFactoryPostProcessor的postProcessBeanFactory方法正在调用...");
 
     }
 
+    @Override
     public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException {
         System.out.println("postProcessBeanDefinitionRegistry");
         BeanDefinition beanDefinition;
@@ -41,6 +43,7 @@ public class MBeanFactoryPostProcessor implements BeanFactoryPostProcessor, Bean
         registry.registerBeanDefinition("factory", beanDefinitionBuilder.getBeanDefinition());
     }
 
+    @Override
     public void setResourceLoader(ResourceLoader resourceLoader) {
         this.loader = resourceLoader;
     }
